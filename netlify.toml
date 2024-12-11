@@ -19,4 +19,16 @@ NODE_VERSION = "20"
   [headers.values]
     Cache-Control = "max-age=0, must-revalidate"
 
+    [[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Encoding = "gzip"
+    Cache-Control = "max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.css"
+  [headers.values]
+    Content-Encoding = "br"
+    Cache-Control = "max-age=31536000, immutable"
+
 
